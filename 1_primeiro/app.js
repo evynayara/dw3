@@ -1,13 +1,20 @@
 //@ Importa as bibliotecas
 const express = require("express")
 require("dotenv").config();
+
 //@ Configura o servidor
 const app = express();
 const port = process.env.PORT;
+
 //@ Cria uma rota para o endereço raiz.
 app.get("/", (req, res) => {
 res.send("Hello DW3!")
 })
+
+//@ Cria uma outra rota.
+app.get("/secroute", (req, res) => {
+    res.send("Rota nova de teste!")
+    })
 
 //@ Inicia o servidor
 app.listen(port, () => {
